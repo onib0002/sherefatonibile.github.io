@@ -1,0 +1,207 @@
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 20px;
+    line-height: 1.7;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.page {
+    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    opacity: 0;
+    transform: translateX(-200%);
+}
+#photo{
+  margin: 4rem auto;
+}
+.page.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+#add .photo-button {
+    display: block;
+}
+
+#add .photo-form {
+    display: none;
+}
+
+#add.hasPhoto .photo-button {
+    display: none;
+}
+
+#add.hasPhoto .photo-form {
+    display: block;
+}
+
+.page header {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-areas: "btn-left title btn-right";
+  height: 1.7rem;
+  background-color: #ddd;
+  box-shadow: 0 2px 4px hsla(0, 0%, 0%, 0.64);
+}
+.page header h1 {
+  font-weight: 300;
+  font-size: 1rem;
+  color: #333;
+  text-align: center;
+  grid-area: title;
+}
+#add header button {
+  font-weight: 300;
+  color: #007aff;
+  font-size: 1rem;
+  grid-area: btn-right;
+}
+#details header button,
+#homePage header button {
+  font-weight: 300;
+  color: green;
+  font-size: 1rem;
+  grid-area: btn-right;
+}
+/*.cards{
+  display: flex;
+  justify-content: space-between;
+}*/
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  height: 23rem;
+  width: 100%;
+  margin: auto;
+}
+.card img{
+  width: 100%;
+  height:15rem;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
+}
+
+.star{
+  color: goldenrod;
+  font-size: 1.0rem;  
+}
+
+.star::before{
+  content: '\2606';    /* star outline */
+  cursor: pointer;
+}
+.star.rated::before{
+  /* the style for a selected star */
+  content: '\2605';  /* filled star */
+}
+
+.stars{
+    counter-reset: rateme 0;   
+    font-size: 1.0rem;
+    font-weight: 500;
+}
+.star.rated{
+    counter-increment: rateme 1;
+}
+.stars::after{
+    content: counter(rateme) '/5';
+}
+
+.card #bottom { 
+  position:absolute;                  
+  margin:auto;  
+                        
+} 
+.id{
+    display: none;
+}
+#btn{
+    background-color: #4CAF50; 
+    border: 2px green;
+    border:#4CAF50;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin:auto ;
+    margin-left: 5rem;
+    padding: 1rem;
+    
+  }
+  #btnDelete {
+    border: none;
+    color: white;
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: #f44336;
+    border-radius: 12px;
+  }
+  
+  #btnSave {
+    border: none;
+    color: white;
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    border-radius: 12px;
+  }
+  /*#btnAdd, #btnSubmit, #btnSave, #btnAddBack{
+    background-color: #4CAF50; 
+    border:#4CAF50;
+    color: white;
+    height: 1.7rem;
+    width: 5rem;
+    margin-left: 2.5rem;
+    
+  }
+
+  #btnAdd:hover, #btnSubmit:hover {
+    background-color: white;
+    border: 2px solid #4CAF50;
+    color: #4CAF50; 
+  }  
+
+  #btnAddBack{
+    background-color: blue; 
+    border:blue;
+    color: white;
+    height: 1.7rem;
+    width: 5rem;
+    margin-left: 0rem;
+    
+  }*/
